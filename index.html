@@ -12,12 +12,31 @@
         <!-- Define a custom marker -->
         <a-marker type="pattern" url="pattern-1 (1).patt">
             <!-- Add a video entity -->
-            <a-video src="#video" position="0 0 0" rotation="-90 0 0" width="1" height="0.5"></a-video>
+            <a-video src="#video" position="0 0 0" width="4" height="3" rotation="-90 0 0"></a-video>
         </a-marker>
         <!-- Add a camera -->
         <a-entity camera></a-entity>
     </a-scene>
     <!-- Define the video resource -->
     <video id="video" src="test.mp4" autoplay loop style="display: none;"></video>
+
+    <!-- Botones de reproducción y pausa -->
+    <button id="playButton">Play</button>
+    <button id="pauseButton">Pause</button>
+    
+    <!-- Script para controlar el video -->
+    <script>
+        var video = document.getElementById('video');
+        var playButton = document.getElementById('playButton');
+        var pauseButton = document.getElementById('pauseButton');
+        
+        playButton.addEventListener('click', function() {
+            video.play();
+        });
+        
+        pauseButton.addEventListener('click', function() {
+            video.pause();
+        });
+    </script>
 </body>
 </html>
